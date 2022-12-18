@@ -78,10 +78,27 @@ body {
 
 #music-container {
     position: absolute;
-    top: 2rem;
+    top: 3rem;
     left: 0;
     width: 100%;
     text-align: center;
+}
+
+.fa-solid.fa-play, .fa-solid.fa-pause {
+  color: #fff;
+  cursor: pointer;
+} 
+
+.fa-solid.fa-pause {
+  display: none;
+}
+
+.name-song {
+  color: #fff;
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  width: 100%;
 }
 
 @-webkit-keyframes spin {

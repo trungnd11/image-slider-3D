@@ -14,8 +14,12 @@ setTimeout(init, 1000);
 var odrag = document.getElementById('drag-container');
 var ospin = document.getElementById('spin-container');
 var aImg = ospin.getElementsByTagName('img');
-var aVid = ospin.getElementsByTagName('video');
+var aVid = ospin.getElementsByTagName("audio");
 var aEle = [...aImg, ...aVid]; // combine 2 arrays
+const audio = document.getElementById("myAudio");
+const play = document.getElementById("play");
+const pause = document.getElementById("pause");
+const nameSong = document.getElementById("name-song");
 
 // Size of images
 ospin.style.width = imgWidth + "px";
@@ -105,11 +109,21 @@ document.onmousewheel = function(e) {
   init(1);
 };
 
-const audio = document.getElementById("myAudio");
-
-audio.play();
-
 audio.addEventListener("ended", function () {
   console.log("Ok");
   audio.play();
+});
+
+play.addEventListener("click", () => {
+  play.style.display = "none";
+  pause.style.display = "block";
+  audio.play();
+  nameSong.innerText = "Hạnh phúc cuối cùng";
+});
+
+pause.addEventListener("click", () => {
+  play.style.display = "block";
+  pause.style.display = "none";
+  audio.pause();
+  nameSong.innerText = "";
 });
