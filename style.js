@@ -104,3 +104,12 @@ document.onmousewheel = function(e) {
   radius += d;
   init(1);
 };
+
+const audio = document.getElementById("myAudio");
+
+audio.play();
+
+audio.addEventListener("ended", function () {
+  console.log("Ok");
+  audio.play();
+});
